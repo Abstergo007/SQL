@@ -6,7 +6,7 @@
 
 * ### Write a SQL query to fetch all the duplicate records from a table.
 
-  * Tables Structure:
+<!--  * Tables Structure:
 \
 drop table users;\
 create table users\
@@ -23,7 +23,7 @@ insert into users values\
 (5, 'Robin', 'robin@gmail.com');\
 \
 select * from users;\
-\
+\-->
   * Solution 1:
 \
 Replace ctid with rowid for Oracle, MySQL and Microsoft SQLServer\
@@ -51,7 +51,7 @@ where x.rn <> 1;
 
 * ### Write a SQL query to fetch the second last record from a employee table.
 
-  * Tables Structure:\
+<!--  * Tables Structure:\
 \
 drop table employee;\
 create table employee\
@@ -86,7 +86,7 @@ insert into employee values(123, 'Vikram', 'IT', 8000);   \
 insert into employee values(124, 'Dheeraj', 'IT', 11000);   \
    \
 select * from employee;\
-\
+\-->
   * Solution:\
 select emp_id, emp_name, dept_name, salary\
 from (\
@@ -98,7 +98,7 @@ where x.rn = 2;\
 * ### Write a SQL query to display only the details of employees who either earn the highest salary
 or the lowest salary in each department from the employee table.
 
-  * Tables Structure:
+<!--  * Tables Structure:
 \
 drop table employee;\
 create table employee\
@@ -133,7 +133,7 @@ insert into employee values(123, 'Vikram', 'IT', 8000);\
 insert into employee values(124, 'Dheeraj', 'IT', 11000);\
 \
 select * from employee;\
-\
+\-->
   * Solution:
 select x.*\
 from employee e\
@@ -149,7 +149,7 @@ order by x.dept_name, x.salary;
 
 * ### From the doctors table, fetch the details of doctors who work in the same hospital but in different speciality.
 
-  * Table Structure:
+<!--  * Table Structure:
 \
 drop table doctors;\
 create table doctors\
@@ -170,7 +170,7 @@ insert into doctors values\
 (5, 'Dr. Farhana', 'Physician', 'Gleneagles Hospital', 'Bangalore', 1700),\
 (6, 'Dr. Maryam', 'Physician', 'Gleneagles Hospital', 'Bangalore', 1500);\
 \
-select * from doctors;
+select * from doctors;-->
 
   * Solution:
 \
@@ -197,7 +197,7 @@ and d1.id <> d2.id;
 
 * From the login_details table, fetch the users who logged in consecutively 3 or more times.
 
-  * Table Structure:
+<!--  * Table Structure:
 \
 drop table login_details;\
 create table login_details(\
@@ -221,7 +221,7 @@ insert into login_details values\
 (112, 'James', current_date+5),\
 (113, 'James', current_date+6);\
 
-select * from login_details;\
+select * from login_details;\-->
 
   * Solution:
 
@@ -239,7 +239,7 @@ where x.repeated_names is not null;
 
 Note: If there are no adjacent student then the student name should stay the same.\
 
-  * Table Structure:
+<!--  * Table Structure:
 
 drop table students;\
 create table students\
@@ -254,7 +254,7 @@ insert into students values\
 (4, 'Stewart'),\
 (5, 'Robin');\
 
-select * from students;
+select * from students;-->
 
   * Solution:
 
@@ -267,7 +267,7 @@ from students;
 
 Note: Weather is considered to be extremely cold then its temperature is less than zero.\
 
-  * Table Structure:
+<!--  * Table Structure:
 
 drop table weather;\
 create table weather\
@@ -288,7 +288,7 @@ insert into weather values\
 (7, 'London', -7, to_date('2021-01-07','yyyy-mm-dd')),\
 (8, 'London', 5, to_date('2021-01-08','yyyy-mm-dd'));\
 
-select * from weather;
+select * from weather;-->
 
   * Solution:
 
@@ -316,7 +316,7 @@ where x.flag = 'Y';
 ### write a SQL query to get the histogram of specialities of the unique physicians
 who have done the procedures but never did prescribe anything.
 
-  * Table Structure:\
+<!--  * Table Structure:\
 
 drop table event_category;\
 create table event_category\
@@ -371,7 +371,7 @@ select * from patient_treatment;\
 select * from event_category;\
 select * from physician_speciality;\
 
-
+-->
   * Solution:\
 select ps.speciality, count(1) as speciality_count\
 from patient_treatment pt\
@@ -388,7 +388,7 @@ group by ps.speciality;
 
 Note: Prefer the account if with the least value in case of same number of unique patients\
 
-   * Table Structure:\
+ <!--  * Table Structure:\
 
 drop table patient_logs;\
 create table patient_logs\
@@ -410,7 +410,7 @@ insert into patient_logs values (3, to_date('20-01-2020','dd-mm-yyyy'), 450);\
 
 select * from patient_logs;
 
-
+-->
    * Solution:\
 select a.month, a.account_id, a.no_of_unique_patients\
 from (\
