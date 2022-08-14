@@ -1,6 +1,9 @@
 
 # Sql Queries
 
+<p align="center"> <img src="Queries/download (4).jpg"> </p>
+
+
 * ### Write a SQL query to fetch all the duplicate records from a table.
 
   * Tables Structure:
